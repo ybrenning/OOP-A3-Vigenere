@@ -1,14 +1,12 @@
 public class Cipher {
     private final String key;
-    private TextProcessor textProcessor;
 
     public Cipher(String key) {
         this.key = key.toLowerCase();
-        this.textProcessor = null;
     }
 
     public String encrypt(String inputFileName, String outputFileName) {
-        textProcessor = new TextProcessor(inputFileName, outputFileName);
+        TextProcessor textProcessor = new TextProcessor(inputFileName, outputFileName);
         String text = textProcessor.readFile();
 
         char[][] table = createTable();
@@ -25,7 +23,7 @@ public class Cipher {
     }
 
     public String decrypt(String inputFileName, String outputFileName) {
-        textProcessor = new TextProcessor(inputFileName, outputFileName);
+        TextProcessor textProcessor = new TextProcessor(inputFileName, outputFileName);
         String text = textProcessor.readFile();
         //Next: decrypt implementation
 

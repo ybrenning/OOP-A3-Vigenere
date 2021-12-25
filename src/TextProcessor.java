@@ -45,8 +45,4 @@ public class TextProcessor {
             e.printStackTrace();
         }
     }
-
-    public void printFile() {
-
-    }
 }
