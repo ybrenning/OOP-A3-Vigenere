@@ -1,15 +1,30 @@
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ * @author Yannick Brenning
+ * The {@code TextProcessor} class reads and writes {@code String}s
+ * into and from files specified by the user.
+ */
 public class TextProcessor {
     private String inputFileName;
     private String outputFileName;
 
+    /**
+     * Constructor for a {@code TextProcessor} object.
+     * @param inputFileName Name of file to read from
+     * @param outputFileName Name of file to write to
+     */
     public TextProcessor(String inputFileName, String outputFileName) {
         this.inputFileName = inputFileName;
         this.outputFileName = outputFileName;
     }
 
+    /**
+     * Reads the content of the input file and converts it to a {@code String}
+     * usable for encryption/decryption by removing irregular symbols.
+     * @return Content of the input file for this {@code TextProcessor} object as a {@code String}
+     */
     public String readFile() {
         StringBuilder sb = new StringBuilder();
         File file = new File(inputFileName);
@@ -35,6 +50,10 @@ public class TextProcessor {
         return inputFileContent;
     }
 
+    /**
+     * Writes a given {@code String} into a new file with the name {@code outputFileName}.
+     * @param fileContent Content to write into the output file
+     */
     public void writeFile(String fileContent) {
         try {
             File file = new File(outputFileName);
