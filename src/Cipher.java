@@ -89,6 +89,7 @@ public class Cipher {
             for (int j = 0; j < 26; j++) {
                 System.out.print(output[i][j]);
             }
+
             System.out.println();
         }
 
